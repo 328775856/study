@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>  
+    <title>列表渲染</title>  
+    <style type="text/css">  
+    </style>  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script> 
+    <style type="text/css">
+    .no,.demo{
+        list-style: none;
+    }
+</style>
+</head>  
+<body>  
+<!-- 使用自定义事件的表单输入组件 -->
+<!-- 
+    <div id="example">
+   <currency v-model="price"></currency>
+   </div>
+   
+<script type="text/javascript">  
+  Vue.component('currency',{
+    props:['value'],
+    template:'<span>$<input ref="input" :value="value" @input="updateValue($event.target.value)"></span>',
+    methods:{
+      updateValue:function(value){
+        var formattendValue=value.trim().slice(0,value.indexOf('.')===-1?value.length:value.indexOf('.')+2
+      );
+      if(formattendValue!==value){
+        this.$refs.input.value=formattendValue
+      }
+      this.$emit('input',Number(formattendValue))
+      }
+    }
+  })
+  new Vue({
+    el:'#example',
+    data:{
+      price:""
+    }
+  })
+</script> -->
+<!-- 自定义组件 -->
+<div id="app">
+  <ccc></ccc>
+</div>
+<script type="text/javascript">
+  Vue.component('ccc',{
+    model:{
+      prop:"checked",
+      event:"change"
+    },
+    props:{
+      chencked:Boolean,
+      value:String
+    }
+  })
+  new Vue({
+    el:'#app'
+    }
+  })
+</script>
+</body>
+</html>
