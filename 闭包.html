@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="dj" onclick="howManyArgs();"></div>
+<script type="text/javascript">
+
+	//https://www.cnblogs.com/miuyu/p/5701894.html
+function a(){
+	var n=0;
+	function b(){
+		n++;
+		alert(n);
+	}
+	return b;
+}
+var c=a();
+c();
+
+function d(){
+	var x=0;
+	function e(){
+		x++;
+		alert(x)
+	}
+	return e()
+}
+var f=d;
+f();
+</script>
+</body>
+</html>

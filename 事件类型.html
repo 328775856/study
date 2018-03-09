@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>event</title>
+</head>
+<body>
+	<ul id="parent">
+		<li class="child">1</li>
+		<li class="child">2</li>
+		<li class="child">3</li>
+	</ul>
+	<script type="text/javascript">
+		var dom=document.getElementById('parent');
+		dom.onclick=function(){
+			var event=event||window.event;
+			var curTarget=event.target||event.srcElement;
+			if(curTarget.tagName.toLowerCase()=='li'){
+				//事件处理
+			}
+		}
+	</script>
+</body>
+</html>

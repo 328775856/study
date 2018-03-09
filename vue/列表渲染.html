@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>  
+    <title>列表渲染</title>  
+    <style type="text/css">  
+    </style>  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script> 
+    <style type="text/css">
+    .no,.demo{
+        list-style: none;
+    }
+</style>
+</head>  
+<body>  
+    <!-- 数组 可带2个参数item和index -->
+   <ul id="exmple"> 
+    
+        <li v-for='(item,index) in items'  :class='style'>
+           {{parentMessage}}-<!-- {{x}} -->-{{index}}-{{item.message}}-
+        </li>
+<p>{{pushitems()}}</p>
+    </ul>
+
+   <!-- 对象 可带三个参数item key index  -->
+  <!-- <ul id="v-for-obj" class="demo">
+        <li v-for="(value,key,index) in obj">
+           {{index}}. {{key}}:{{value}}
+        </li>
+    </ul> -->
+    <script type="text/javascript">  
+        //数组的v-for  
+        var vm=new Vue({
+            el:'#exmple',
+            data:{
+                parentMessage:"parent",
+                style:{
+                    no:1
+                },
+                items:[
+                    {message:'foo'},
+                    {message:'bar'}
+                ],
+               // x:Math.floor(Math.random()*10).toSource()
+            },
+            methods:{
+                pushitems:function(){
+                    if(this.items.length<10){
+                     this.items.splice(0,0,{message:'foobar'})
+                    }
+                }
+            }
+        })
+      //  vm.items.push({message:'foobar'})
+
+
+
+        //对象的v-for
+    /*    var vm=new Vue({
+            el:".demo",
+            data:{
+                obj:{
+                    firstName:'Jonh',
+                    lastName:'Smith',
+                    age:18
+                }
+            }
+        })
+        console.log(vm.obj.age)*/
+    </script> 
+</body>
+</html>

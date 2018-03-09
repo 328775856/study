@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>入门</title>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="val" v-on:keypress.enter="addToList">
+        <ul>
+            <li v-for="val in values">
+                {{val.val}}
+                <input type="button" value="删除" v-on:click="removeList($index)" />
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            val: "1",
+            values: []
+        },
+        methods: {
+            addToList: function() {
+                var val = parseInt(this.val.trim()); //注意，因为当上面的val是字符串类型的时候，才能用trim()，如果是数字类型，则用this.val  
+                if (val) {
+                    this.values.push({ val: val });
+                }
+                this.val = String(val + 1);
+            },
+            removeList: function(index) {
+                this.values.splice(index, 1);
+            }
+        }
+    })
+    </script>
+</body>
+
+</html>

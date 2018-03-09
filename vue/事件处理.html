@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>  
+    <title>列表渲染</title>  
+    <style type="text/css">  
+    </style>  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script> 
+    <style type="text/css">
+    .no,.demo{
+        list-style: none;
+    }
+</style>
+</head>  
+<body>  
+   <!-- 事件处理直接绑定表达式 <div id="example">
+       <button @click="counter+=1">Add 1</button>
+       <p>The button above has been clicked {{counter}} times</p>
+   </div>
+   
+   <script type="text/javascript">  
+   var example=new Vue({
+       el:"#example",
+       data:{
+           counter:3
+       }
+   }) 
+</script> -->
+
+<!-- 事件处理直接绑定函数  -->
+<div id="example">
+       <button @click.self.prevent>submit</button>
+       <button @click='warn(message)'>submit</button>
+   </div>
+   
+   <script type="text/javascript">  
+   var example=new Vue({
+       el:"#example",
+       data:{
+           message:'Vue.js'
+       },
+       methods: {
+  warn: function (message) {
+    // 现在我们可以访问原生事件对象
+   
+    alert(message)
+  }
+}
+   }) 
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数封装</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//https://www.cnblogs.com/libin-1/p/6178003.html
+		function Person(name,age,sex){
+			this.name=name;
+			this.agr=age;
+			this.sex=sex;
+		}
+		Person.prototype={
+			constructor:Person,
+			sayHello:function(){
+				console.log('hello');
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="dj">123</div>
+<script type="text/javascript">
+//闭包
+var iBaseNum = 10;
+
+function addNum(iNum1, iNum2) {
+  function doAdd() {
+  	//alert(iNum1 + iNum2 + iBaseNum)
+    return iNum1 + iNum2 + iBaseNum;
+  }
+  return doAdd();
+}
+var c=addNum(1,2);
+//原始数据类型undefined
+//1
+//  var oTemp;
+// alert(oTemp == undefined);//true
+// 2
+// var oTemp;
+// alert(typeof oTemp); //输出 "undefined"
+// 3
+// var oTemp;
+// alert(typeof oTemp);  //输出 "undefined"
+// alert(typeof oTemp2);  //输出 "undefined"
+// 前面的代码对两个变量输出的都是 "undefined"，即使只有变量 oTemp2 从未被声明过。如果对 oTemp2 使用除 typeof 之外的其他运算符的话，会引起错误，因为其他运算符只能用于已声明的变量上。
+//4 例如，下面的代码将引发错误：
+// var oTemp;
+// alert(oTemp2 == undefined);
+// 5当函数无明确返回值时，返回的也是值 "undefined"，如下所示：
+// function testFunc() {
+// }
+
+// alert(testFunc() == undefined);  //输出 "true"
+//原始数据类型null注意(typeof null=object)
+//alert(null == undefined);  //输出 "true"
+//alert(typeof(null))
+// var iNum = 0x12f;
+// alert(iNum.toString(8))
+// var arr=['s',2,3]
+// alert(arr.toString().replace(','/g,'-'))
+//三元运算符
+// document.getElementById("dj").onclick=function(){
+// 	a=10;
+// 	 a=a>0?alert('>'):alert('<');
+// }
+// var oNumberObject = new Number(6800);
+// alert(oNumberObject.toExponential(1));  //输出 "6.8e+1"
+// 打印出方法
+// function add(){
+// 		alert(0)
+// }
+// document.write(add.toString());
+// var a = [1,2,3]; 
+// document.write(a.join('.')+'<br/>');
+// document.write(a);
+//私作用域
+// var obj=new Object;
+// var obj2=new Object;
+// obj._color='blue';
+// alert(obj2.color);
+function Car(sColor,sType){
+	this.color=sColor;
+	this.type=sType;
+	this.driver=['Mike','John'];
+}
+Car.prototype.showColor=function(){
+	alert(this.color);
+}
+var car1=new Car('blue','lincoln');
+var car2=new Car('red','benz');
+car1.driver.push('Green');
+alert(car2.driver);
+</script>
+</body>
+</html>

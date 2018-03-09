@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>  
+    <title>作用域</title>  
+    <style type="text/css">  
+    </style>  
+    <script type="text/javascript">  
+    	//http://blog.csdn.net/bbs375/article/details/52483862
+       function buttonInit(){    
+            for(var i=1;i<4;i++){    
+                var b=document.getElementById("button"+i);    
+                b.addEventListener("click",function(){ alert("Button"+i);},false);    
+            }    
+        }    
+        window.onload=buttonInit;    
+    </script>  
+</head>  
+<body>  
+<button id="button1">Button1</button>    
+<button id="button2">Button2</button>    
+<button id="button3">Button3</button>   
+</body>
+</html>

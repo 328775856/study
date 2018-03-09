@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>  
+    <title>props</title>  
+    <style type="text/css">  
+    </style>  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script> 
+<style type="text/css">
+</style>
+</head>  
+<body>  
+<!-- 使用v-on绑定自定义事件 -->
+<!--  <div id="app">
+    <p>{{total}}</p>
+    <button-counter @increment="incrementTotal"></button-counter>
+    <button-counter @increment="incrementTotal"></button-counter>
+</div>
+<script>  
+    Vue.component('button-counter',{
+        template:'<button @click="incrementCounter">{{counter}}</button>',
+        data:function(){
+            return{
+                counter:0
+            }
+        },
+        methods:{
+            incrementCounter:function(){
+                this.counter+=1
+                this.$emit('increment')
+            }
+        }
+    })
+
+    new Vue({
+        el:'#app',
+        data:{
+            total:0
+        },
+        methods:{
+            incrementTotal:function(){
+                this.total+=1
+            }
+        }
+    })
+</script> -->
+<!-- 使用了payload荷载 -->
+<div id="app">
+    <p v-for='msg in messages'>{{msg}}</p>
+    <button-message @message="handleMessage">send</button-message>
+</div>
+<script type="text/javascript">
+    Vue.component('button-message',{
+        template:"<div><input type='text' v-model='message'/><button @click='handleSendMessage'>send</button></div>",
+        data:function(){
+            return {
+                message:'test message'
+            }
+        },
+        methods:{
+            handleSendMessage:function(){
+                this.$emit('message',{message:this.message})
+            }
+        }
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            messages:[]
+        },
+        methods:{
+            handleMessage:function(payload){
+                this.messages.push(payload.message)
+            }
+        }
+    })
+</script>
+</body>
+</html>

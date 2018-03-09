@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript">
+//flex布局主要是定一个总的宽高（px）,其他适应部分都用百分比表示;
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style type="text/css">
+    body{
+    	height: 1000px;
+    }
+		.parent{
+			width: 100%;
+			height: 10%;
+			border: 1px solid #ccc;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			align-items: stretch ;
+		}
+		.c1{
+		/*	flex: 1;*/
+			width: 10%;
+			height: 110%;
+			background: red;
+		}
+		.c2{
+		/*	flex: 1;*/
+			width: 10%;
+			height: 50%;
+			background: blue;
+		}
+		.c3{
+		/*	flex: 1;*/
+			width: 10%;
+			height: 100%;
+			background: yellow;
+		}
+		.c4{	
+		/*	flex: 1;*/
+			width: 10%;
+			height: 100%;
+			background: black;
+		}
+		.c5{
+		/*	flex: 1;*/
+			width: 10%;
+			height: 100%;
+			background: #c69;
+		}
+
+		.bg,.bg2,.bg3,.bg4,.bg5,.bg6{
+			margin: 50px auto;
+			width: 100px;
+			height: 100px;
+			background:#ccc;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			display: flex;
+		}
+		.bg{
+
+			justify-content: center;
+			align-items: center;
+		}
+				.bg2{
+			justify-content: space-between;
+			flex-direction: column;
+		}
+				.bg3{
+			flex-direction: column;
+			justify-content: space-between;
+		}
+				.bg4{
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: ;
+		}
+				.bg5{
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: ;
+		}
+				.bg6{
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		.c{
+			width: 20px;
+			height: 20px;
+			background: #000;
+			border: 1px solid #000;
+			border-radius: 20px;
+		}
+		.bg2 .c:nth-child(2){
+			align-self: flex-end;
+		}
+		.bg3 .c:nth-child(2){
+			align-self: center;
+		}
+		.bg3 .c:nth-child(3){
+			align-self: flex-end;
+		}
+		.bg4 .column{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		.bg5 .column{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		.bg5 .column:nth-child(2){
+			align-self: center;
+		}
+		.bg6 .column{
+			display: flex;
+			flex-direction: column;
+			justify-content:space-around; ;
+		}
+/*		.bg6 .column:nth-child(2){
+			align-self: center;
+		}	*/
+	</style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+        <div class="c5"></div>
+    </div>
+
+    <div class="bg">
+		<div class="c"></div>
+    </div>
+    <div class="bg2">
+		<div class="c"></div>
+		<div class="c"></div>
+    </div>
+    <div class="bg3">
+		<div class="c"></div>
+		<div class="c"></div>
+		<div class="c"></div>
+    </div>
+    <div class="bg4">
+		<div class="column">
+			<div class="c"></div>
+			<div class="c"></div>
+		</div>
+		<div class="column">
+			<div class="c"></div>
+			<div class="c"></div>
+		</div>
+    </div>
+     <div class="bg5">
+		<div class="column">
+			<div class="c"></div>
+			<div class="c"></div>
+		</div>
+		<div class="column">
+			<div class="c"></div>
+		</div>
+		<div class="column">
+			<div class="c"></div>
+			<div class="c"></div>
+		</div>
+    </div>
+    <div class="bg6">
+		<div class="column">
+			<div class="c"></div>
+			<div class="c"></div>
+			<div class="c"></div>
+		</div>
+		<div class="column">
+			<div class="c"></div>
+			<div class="c"></div>
+			<div class="c"></div>
+		</div>
+    </div>
+</body>
+
+</html>

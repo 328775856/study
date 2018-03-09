@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>  
+    <title>列表渲染</title>  
+    <style type="text/css">  
+    </style>  
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script> 
+    <style type="text/css">
+    .no,.demo{
+        list-style: none;
+    }
+</style>
+</head>  
+<body>  
+    <!-- 数组 可带2个参数item和index -->
+   <ul id="exmple"> 
+    
+        <li v-for='n in 2' :class='{no:no}'>
+            {{n}}
+        </li>
+    </ul>
+
+    <script type="text/javascript">  
+        //数组的v-for  
+        var vm=new Vue({
+            el:'#exmple',
+            data:{
+                numbers:[1,2,3,4,5],
+                no:true
+            },
+            methods:{
+                even:function(){
+                    return numbers.filter(function(number){
+                        return number%2===0
+                    })
+                }
+            }
+        })
+    </script> 
+</body>
+</html>

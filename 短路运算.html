@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+window.onload=function(){
+	//&&
+	var bTrue = {};
+	var bFalse = false;
+	var bResult = bTrue && bFalse;
+	alert(bResult);
+	//错误
+	// var bTrue = true;
+	// var bResult = (bTrue && bUnknown);	//发生错误
+	// alert(bResult);			//这一行不会执行
+    // 如果一个运算数是对象，另一个是 Boolean 值，返回该对象。
+    // 如果两个运算数都是对象，返回第二个对象。
+    // 如果某个运算数是 null，返回 null。
+    // 如果某个运算数是 NaN，返回 NaN。
+    // 如果某个运算数是 undefined，发生错误。
+    //||
+    var bTrue = true;
+	var bFalse = false;
+	var bResult = bTrue || bFalse;
+	alert(bResult);
+	//错误
+	// var bFalse = false;
+	// var bResult = (bFalse || bUnknown);	//发生错误
+	// alert(bResult);			//不会执行这一行
+    // 如果一个运算数是对象，并且该对象左边的运算数值均为 false，则返回该对象。
+    // 如果两个运算数都是对象，返回第一个对象。
+    // 如果最后一个运算数是 null，并且其他运算数值均为 false，则返回 null。
+    // 如果最后一个运算数是 NaN，并且其他运算数值均为 false，则返回 NaN。
+    // 如果某个运算数是 undefined，发生错误。
+
+
+}
+</script>
+</body>
+</html>

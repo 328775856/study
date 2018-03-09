@@ -1,0 +1,62 @@
+@charset "utf-8";
+//安装插件sass  sassbuild  
+//自动保存编译无需按ctrl+b  sublimeonsavebuild
+
+    $color: #369;
+    $side:left;
+
+    body {
+
+    background: darken($color, 50%);
+
+    }
+    div{
+		background:#fff;
+		width:100px;
+		height:100px;
+        margin-#{$side}:(100px/2);
+        //position:relative;
+    }
+    div {
+        p{
+        background:#ddbdff;
+        width:50px;
+        height:50px;
+        margin:0 auto;
+        // position:absolute;
+        // top:25px;
+        // left:25px;
+        }
+        a{
+            padding:1px;
+            background:#bc1339;
+        }
+    }
+    p{
+        border:{
+            color:#000;
+            style:solid;
+            width:1px;
+        }
+    }
+
+    #content{
+        article{
+            h1{color:#333}
+            p{margin-bottom:30px}
+        }
+        aside{background-color:#eee}
+    }
+
+    #content{
+        width:100px;
+        height:100px;
+       color:blue;
+       :hover{color:red} 
+    }
+    // #content{
+    //     color:blue;
+    //     &:hover{color:red}
+    // }
+    
+

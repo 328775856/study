@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>date</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// localStorage.lastname='Smith';
+		// document.write('Last name:'+localStorage.lastname);
+		if(localStorage.pagecount){
+			localStorage.pagecount=Number(localStorage.pagecount)+1;
+		}else{
+			localStorage.pagecount=1;
+		}
+		document.write('Visits:'+localStorage.pagecount+'time(s)');
+	</script>
+</body>
+</html>
