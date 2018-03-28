@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function database(){
+			if(!window.openDatabase){
+				alert('该浏览器不支持数据库');
+			}else{
+				alert('ok');
+				init()
+			};
+		}
+		function init() {
+
+window.dataBase.transaction( function(tx) {
+
+tx.executeSql(
+
+"create table if not exists TEMPLATE (template_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, template_name TEXT)",
+
+[],
+
+function(tx,result){ alert('创建模板表成功'); },
+
+function(tx, error){ alert('创建模板表失败:' + error.message);
+
+});
+
+});
+
+}
+		database();
+	</script>
+</body>
+</html>
