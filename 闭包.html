@@ -30,6 +30,20 @@ function d(){
 }
 var f=d;
 f();
+
+//
+var g;
+function x(){
+	var s=3;
+	function y(){
+		s++;
+		return s
+	}
+	g=y();
+	return y
+}
+var z=x();
+alert(g)
 </script>
 </body>
 </html>

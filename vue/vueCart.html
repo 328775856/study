@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>vue</title>
+    <style type="text/css">
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        width: 80%;
+        height: 80%;
+    }
+    .container{
+        width: 60%;
+        margin: 0 auto;
+    }
+    ul {
+        width: 100%;
+       background: #eee;
+       border: 1px solid #aaa;
+       border-bottom: 0;
+    }
+
+    ul>li {
+        width: 15%;
+        float: left;
+        list-style: none;
+        text-align: center;
+    }
+    ul>li:nth-child(1) {
+        margin-top: 1px;
+        width: 3%;
+    }
+    ul>li:nth-child(2) {
+        width: 3%;
+    }
+    ul>li:nth-child(3) {
+        width: 34%;
+    }
+
+    .visited {
+        background: #f9f;
+    }
+
+    .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .clearfix {
+        zoom: 1;
+    }
+
+    .bottom{
+        width: 100%;
+       border: 1px solid #aaa;
+    }
+    .bottom table{
+        text-align: center;
+    }
+    .bottom table tr td{
+        width: 15%;
+    }
+    .bottom table tr td:nth-child(1){
+        width: 2.5%;
+        line-height: 0px;
+    }
+    .bottom table tr td:nth-child(2){
+        width: 10%;
+    }
+    .bottom table tr td:nth-child(3){
+        width: 28%;
+        text-align: left;
+    }
+    .bottom table tr td:nth-child(4){
+        width: 15%;
+    }
+    .bottom table tr td a{
+        background: #eee;
+        border: 1px solid #ccc;
+        display: inline-block;
+        width: 15%;
+        line-height: 19px;
+    }
+    .bottom table tr td input{
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-left: 0px solid #ccc;
+        border-right: 0px solid #ccc;
+        height: 19px;
+        width: 15%;
+        text-align: center;
+    }
+    
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="top">
+                <ul class="clearfix">
+                    <li><input type="checkbox" :checked="isChecked" @click="isChecked=!isChecked"></li>
+                    <li>全选</li>
+                    <li>商品</li>
+                    <li>数量</li>
+                    <li>单价</li>
+                    <li>金额</li>
+                    <li>操作</li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <table v-if="seen">
+                    <tr v-for="(item,index) in goods">
+                        <td><input type="checkbox" :checked="item.select">{{ischeck}}</td>
+                        <td><img src="1.jpg" alt=""></td>
+                        <td v-for="(v,k) in item.carts"></td>
+                        <td>
+                            <a @click="if(item.num!=0)item.num--">-</a><input type="text" v-model='item.num'><a @click="item.num++">+</a>
+                        </td>
+                        <td>￥{{item.price}}.00</td>
+                        <td>￥ {{item.num*item.price}}.00</td>
+                        <td @click="deleteTd">删除</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var vm = new Vue({
+        el: "#app",
+        data:{
+            seen:true,
+            isChecked:false,
+            total:0,
+            totalPrice:0,
+            goods:[
+                {
+                 'select':false, 
+                'num':1,
+                'price':800,
+                'carts':[
+                        {'text':''}
+                ]
+            },
+            {
+                 'select':false, 
+                'num':3,
+                'price':800,
+                'carts':[
+                        {'text':''}
+                ]
+            }
+
+        ]
+        },
+        computed:{
+            ischeck:function(){
+                for(var i=0;i<this.goods.length;i++){
+                     this.goods[i].select=this.isChecked;
+                } 
+            }
+        },
+        methods:{
+            deleteTd:function(){
+                this.goods.seen=false
+            }
+        }
+    })
+    </script>
+</body>
+
+</html>

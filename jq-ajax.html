@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jq-ajax</title>
+</head>
+<body>
+	<form id="upload" enctype="multipart/form-data" method="post"> 
+ <input type="file" name="file" id="pic"/> 
+ <input type="button" value="提交" onclick="uploadPic();"/> 
+ <span class="showUrl"></span> 
+ <img src="" class="showPic" alt=""> 
+</form> 
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#tj').click(function(){
+					$.ajax({
+				type:'POST',
+				url:'login.php',
+				data:$('#form').serialize(),
+				success:function(data){
+					console.log(data);
+				}
+				});
+			})
+			
+		})
+
+	</script>
+</body>
+</html>

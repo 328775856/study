@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+    function loadXMLDoc() {
+        var xmlhttp;
+        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else { // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET", "login1.php?t=" + Math.random(), true);
+        xmlhttp.send();
+    }
+
+    function x() {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById('myDiv').innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open('GET', 'login.php?phone=phone&pwd=pwd',
+
+
+        );
+        xmlhttp.send();
+
+    }
+
+    function xx() {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById('myDiv').innerHTML = xmlhttp.responseText;
+            }
+            //console.log(xmlhttp.readystate)
+        }
+        // xmlhttp.onreadystatechange = function() {
+        //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        //         document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+        //     }
+        // }
+        xmlhttp.open('POST', 'login1.php', true);
+        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp.send('username=12312313&userpwd=admin');
+    }
+    function get(){
+    	var xmlhttp;
+    	if(window.XMLHttpRequest){
+    		xmlhttp=new XMLHttpRequest();
+    	}else{
+    		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    	}
+    	xmlhttp.onreadystatechange=function(){
+    		if(xmlhttp.readyState==4&&xmlhttp.status==200){
+    			document.getElementById('myDiv').innerHTML=xmlhttp.responseText;
+    		}
+    	}
+    	xmlhttp.open('GET','login.php',true);
+    	xmlhttp.send();
+    }
+    function post(){
+    	var xmlhttp;
+    	if(window.XMLHttpRequest){
+    		xmlhttp=new XMLHttpRequest();
+    	}else {
+    		xmlhttp=new ActiveXObject('Microsoft.XMLHTTP');
+    	}
+    	xmlhttp.onreadystatechange=function(){
+    		if(xmlhttp.readyState==4&&xmlhttp.status==200){
+    			document.getElementById('myDiv').innerHTML=xmlhttp.responseText;
+    		}
+    	}
+    	xmlhttp.open('POST','login.php',true);
+    	xmlhttp.setRequestHeader("Content-type",'applicatiion/x-www-form-urlcoded');
+    	xmlhttp.send();
+    }
+    </script>
+</head>
+
+<body>
+    <h2>AJAX</h2>
+    <button type="button" onclick="get()">请求数据</button>
+    <div id="myDiv">1231</div>
+    <table  style="border: 1px solid red">
+    <thead>
+        <tr>
+            <th>xmlhttp.readyState</th>
+            <th>状态</th>
+        <th>xmlhttp.status</th>
+        <th>状态</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            
+            <td>0</td>
+            <td>请求未初始化</td>
+            <td>200</td>
+            <td>ok</td>
+        </tr>
+        <tr>
+            
+            <td>1</td>
+            <td>服务器连接已建立</td>
+            <td>404</td>
+            <td>未找到页面</td>
+        </tr>
+        <tr>
+           
+            <td>2</td>
+             <td>请求已接收</td>
+              <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            
+            <td>3</td>
+            <td>请求处理中</td><td></td>
+            <td></td>
+        </tr>
+        <tr>
+            
+            <td>4</td>
+            <td>请求已完成，且相应已就绪</td><td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    </table>
+</body>
+
+</html>
